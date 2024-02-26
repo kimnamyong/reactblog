@@ -37,39 +37,28 @@ function App() {
     newA[i] = newA[i] + 1;
     따봉변경(newA);
   }
-
   let [입력값, 입력값변경] = useState("");
   let [따봉, 따봉변경] = useState([0,0,0]);
-
   const addToSave=()=>{
    // 저장할때마다 글제목 추가
    let arrayCopy = [...글제목];
    arrayCopy.unshift(입력값);
    글제목변경(arrayCopy);
-
    // 저장할때마다 따봉버튼 추가
    let 따봉복사=[...따봉];
-   따봉복사.unshift(0)
-   따봉변경(따봉복사)
+   따봉복사.unshift(0);     따봉변경(따봉복사)
   }
-
   return (
     <div className="App">
       <div className="black-nav">
         <div style={{ color: "gold", fontSize: "30px" }}>개발 Blog</div>
       </div>
       <button onClick={제목바꾸기}>글제목변경 </button>
-      <button onClick={정렬하기}>정렬하기 </button>
-      <hr></hr>
+      <button onClick={정렬하기}>정렬하기 </button>      <hr></hr>
       <div className="publish">
-        <input
-          onChange={(e) => {
-            입력값변경(e.target.value);
-          }}
-        />
+        <input  onChange={(e) => {  입력값변경(e.target.value);  }} />
         <button  onClick={addToSave}>  저장     </button>
       </div>
-
       {글제목.map((글, i) => {
         return (
           <div className="list" key={i}>

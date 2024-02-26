@@ -94,10 +94,20 @@ function App() {
   );
 } // app
 
-function Modal({글제목,누른제목}){
+// function Modal({글제목,누른제목}){
+//  return(
+//   <div className="modal">
+//    <h2>{글제목[누른제목]}</h2>
+//    <p>날짜</p>
+//    <p>상세내용</p>
+//   </div>
+//  )
+// }
+function Modal(props){ 
+ console.log(props)
  return(
   <div className="modal">
-   <h2>{글제목[누른제목]}</h2>
+   <h2>{props.글제목[props.누른제목]}</h2>
    <p>날짜</p>
    <p>상세내용</p>
   </div>
